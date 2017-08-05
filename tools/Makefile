@@ -45,7 +45,7 @@ acpi: FORCE
 cpupower: FORCE
 	$(call descend,power/$@)
 
-cgroup firewire hv guest usb virtio vm net: FORCE
+cgroup firewire hv guest usb virtio vm net dtbtool: FORCE
 	$(call descend,$@)
 
 liblockdep: FORCE
@@ -100,7 +100,7 @@ acpi_clean:
 cpupower_clean:
 	$(call descend,power/cpupower,clean)
 
-cgroup_clean hv_clean firewire_clean lguest_clean usb_clean virtio_clean vm_clean net_clean:
+cgroup_clean hv_clean firewire_clean lguest_clean usb_clean virtio_clean vm_clean net_clean dtbtool_clean:
 	$(call descend,$(@:_clean=),clean)
 
 liblockdep_clean:
